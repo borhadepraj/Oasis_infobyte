@@ -1,0 +1,52 @@
+package tasks;
+
+import java.util.Scanner;
+
+public class Task3 {
+
+public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int balance=0, withdraw, deposit;
+		
+		//Main menu on the screen of ATM machine
+		System.out.println("Welcome!!!");
+		System.out.println("Choose 1 to Withdraw the money!!!");
+		System.out.println("Choose 2 to Deposit the money!!!");
+		System.out.println("Choose 3 to Check the current balance!!!");
+		
+		//Ask user to choose any of the above option from the menu
+		
+		int choice;
+		choice = sc.nextInt();
+		
+		switch(choice)
+		{
+		case 1: System.out.println("Enter amount to be withdrawn:");//Withdraw
+				withdraw = sc.nextInt();
+				if(balance>=withdraw)
+				{
+					System.out.println("Please collect the money!!!");
+				}
+				else
+				{
+					System.out.println("Unable to proceed the transaction due to insufficient balance!!! ");
+				}
+				break;
+				
+		case 2: System.out.println("Enter amount to be deposited:");//Deposit
+		        deposit = sc.nextInt();
+		        balance = balance + deposit;
+		        System.out.println("Amount deposited successfully!!!");
+	            break;
+				
+		case 3: System.out.println("Your current account balance is:"+" "+balance);//Checking balance
+				break;
+				
+		default: System.out.println("Enter a valid choice!!!"); 
+		}
+        System.out.println("Thank you, Visit again!!!");
+        
+     }
+}
